@@ -1,0 +1,109 @@
+<div
+  class="form-group maximum-container"
+  (mouseover)="
+    _domService.addClassToElementByClassName('maximum-container', 'on-hover')
+  "
+  (mouseout)="
+    _domService.removeClassToElementByClassName('maximum-container', 'on-hover')
+  "
+>
+  <label class="text-muted">Maximum</label>
+
+  <div class="counter-container">
+    <div
+      long-press
+      class="material-icons minus-icon"
+      role="button"
+      [ngClass]="{'disabled': maximum <= 0}"
+      (click)="minusMaximum()"
+      (onLongPressing)="minusMaximum()"
+    >
+      remove_circle
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      autocomplete="off"
+      (focus)="
+        _domService.addClassToElementByClassName(
+          'timeout-container',
+          'on-hover'
+        )
+      "
+      (blur)="
+        _domService.removeClassToElementByClassName(
+          'timeout-container',
+          'on-hover'
+        )
+      "
+      [(ngModel)]="maximum"
+      [attr.placeholder]="maximum"
+      [ngClass]="{ class: true }"
+      (change)="changeMaximum($event)"
+    />
+    <div
+      long-press
+      class="material-icons plus-icon"
+      role="button"
+      (click)="plusMaximum()"
+      (onLongPressing)="plusMaximum()"
+    >
+      add_circle
+    </div>
+  </div>
+</div>
+
+<div
+  class="form-group easi-container"
+  (mouseover)="
+    _domService.addClassToElementByClassName('easi-container', 'on-hover')
+  "
+  (mouseout)="
+    _domService.removeClassToElementByClassName('easi-container', 'on-hover')
+  "
+>
+  <label class="text-muted">Ease Time</label>
+
+  <div class="counter-container">
+    <div
+      long-press
+      class="material-icons minus-icon"
+      role="button"
+      [ngClass]="{'disabled': easeTime <= 0}"
+      (click)="minusEaseTime()"
+      (onLongPressing)="minusEaseTime()"
+    >
+      remove_circle
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      autocomplete="off"
+      (focus)="
+        _domService.addClassToElementByClassName(
+          'extended-timeout-container',
+          'on-hover'
+        )
+      "
+      (blur)="
+        _domService.removeClassToElementByClassName(
+          'extended-timeout-container',
+          'on-hover'
+        )
+      "
+      [(ngModel)]="easeTime"
+      [attr.placeholder]="easeTime"
+      [ngClass]="{ class: true }"
+      (change)="changeEaseTime($event)"
+    />
+    <div
+      long-press
+      class="material-icons plus-icon"
+      role="button"
+      (click)="plusEaseTime()"
+      (onLongPressing)="plusEaseTime()"
+    >
+      add_circle
+    </div>
+  </div>
+</div>

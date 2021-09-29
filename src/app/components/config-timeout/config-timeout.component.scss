@@ -1,0 +1,101 @@
+.timeout-container, .extended-timeout-container {
+    .counter-container {
+        display: flex;
+
+        div {
+            font-size: 1.4em;
+            color: var(--main-color);
+            opacity: 0;
+            position: relative;
+            cursor: pointer;
+            width: 0;
+            text-align: center;
+        }
+    
+        :first-child {
+            top: 0px;
+            margin-right: 4px;
+            transition:
+                width 100ms linear 0s,
+                opacity 150ms ease 120ms,
+                top 150ms ease 120ms;
+            -webkit-transition:
+                width 100ms linear 0s,
+                opacity 150ms ease 120ms,
+                top 150ms ease 120ms;
+            -moz-transition:
+                width 100ms linear 0s,
+                opacity 150ms ease 120ms,
+                top 150ms ease 120ms;
+            -o-transition: 
+                width 100ms linear 0s,
+                opacity 150ms ease 120ms,
+                top 150ms ease 120ms;
+        }
+    
+        input + div {
+            bottom: -12px;
+            margin-left: 4px;
+
+            transition:
+                width 100ms ease 0s,
+                opacity 150ms ease 120ms,
+                bottom 150ms ease 120ms;
+            -webkit-transition:
+                width 100ms ease 0s,
+                opacity 150ms ease 120ms,
+                bottom 150ms ease 120ms;
+            -moz-transition:
+                width 100ms ease 0s,
+                opacity 150ms ease 120ms,
+                bottom 150ms ease 120ms;
+            -o-transition: 
+                width 100ms ease 0s,
+                opacity 150ms ease 120ms,
+                bottom 150ms ease 120ms;
+        }
+    }
+
+    &.on-hover {
+        .counter-container {
+
+            div {
+                width: 36px;
+            }
+
+            :first-child {
+                top: 8px;
+                opacity: 0.5;
+
+                &:not(.disabled):hover {
+                    opacity: 1;
+                }  
+            }
+    
+            input + div {
+                bottom: -8px;
+                opacity: 0.5;
+
+                &:not(.disabled):hover {
+                    opacity: 1;
+                }  
+            }
+    
+            button {
+                opacity: 1;
+                span {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.disabled {
+        .counter-container {
+            .minus-timeout, .plus-timeout {
+                display: none;
+                cursor: none;
+            }
+        }
+    }
+}

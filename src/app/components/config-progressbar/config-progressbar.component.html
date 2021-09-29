@@ -1,0 +1,53 @@
+<div class="form-group checkbox-container">
+  <label class="text-muted">Progress Bar</label>
+
+  <div class="form-check">
+
+    <input
+      id="progressBarNone"
+      type="radio"
+      name="progressBarCheck"
+      class="form-check-input"
+      checked="checked"
+      [value]="null"
+      (change)="setProgressBarConfig($event)"
+    />
+    <label for="progressBarNone" class="form-check-label text-muted"
+      >None</label
+    >
+
+  </div>
+
+  <div class="form-check">
+
+    <input
+      id="progressBarIncreasing"
+      type="radio"
+      name="progressBarCheck"
+      class="form-check-input"
+      [value]="progressAnimationTypes.increasing"
+      (change)="setProgressBarConfig($event)"
+    />
+    <label for="progressBarIncreasing" class="form-check-label text-muted"
+      >Increasing</label
+    >
+
+  </div>
+
+  <div class="form-check">
+
+    <input
+      id="progressBarDecreasing"
+      type="radio"
+      name="progressBarCheck"
+      class="form-check-input"
+      [value]="progressAnimationTypes.decreasing"
+      (change)="setProgressBarConfig($event)"
+    />
+    <label for="progressBarDecreasing" class="form-check-label text-muted"
+      >Decreasing</label
+    >
+
+  </div>
+
+</div>

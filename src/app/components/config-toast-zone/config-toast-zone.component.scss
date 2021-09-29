@@ -1,0 +1,122 @@
+@import '../../../assets/variables';
+
+.form-group {
+    height: 7.8em;
+    min-height: 7.8em;
+
+    .zone-container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        padding: .4em;
+        
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: .1em;
+
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 96%;
+                    height: 92%;
+
+                    border-radius: .25rem;
+                    border: 1px dashed var(--main-color);
+                    color: var(--main-color);
+                    background: #fff;
+                    opacity: .5;
+
+                    transition: opacity 150ms ease 120ms;
+                    -webkit-transition: opacity 150ms ease 120ms;
+                    -moz-transition: opacity 150ms ease 120ms;
+                    -o-transition: opacity 150ms ease 120ms;
+
+                    &:hover {
+                        opacity: 1;
+                        background: var(--main-color-bg);
+                        outline: 5px auto var(--main-color);
+                    }
+
+                    span {
+                        font-size: 1.2rem;
+                        background: #fff;
+                        border-radius: 50%;
+                    }
+                }
+
+                &.added {
+                    button {
+                        border: 1px solid var(--main-color);
+                        outline: 5px auto var(--main-color);
+                        background: var(--main-color-bg);
+                        opacity: 1;
+
+                        span {
+                            animation-name: scaling;
+                            animation-duration: .7s;
+                            animation-fill-mode:both;
+                        }
+                    }
+                }
+
+                &.stripped {
+                    button {
+                        animation-name: stripped;
+                        animation-duration: 120ms;
+                        animation-delay: 120ms;
+                        animation-fill-mode: both;
+                    }
+                }
+
+                &.not-available {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.4)
+    }
+}
+
+@keyframes stripped {
+    0% {
+        background: -webkit-repeating-linear-gradient(45deg, var(--main-color), var(--main-color) .1rem, var(--main-color-bg) 0, var(--main-color-bg) 10rem);
+        background: repeating-linear-gradient(45deg, var(--main-color), var(--main-color) .1rem, var(--main-color-bg) 0, var(--main-color-bg) 10rem);
+    }
+
+    25% {
+        background: -webkit-repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 0.5rem, var(--main-color-bg) 0, var(--main-color-bg) 8rem);
+        background: repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 0.5rem, var(--main-color-bg) 0, var(--main-color-bg) 8rem);
+    }
+
+    50% {
+        background: -webkit-repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 0.8rem, var(--main-color-bg) 0, var(--main-color-bg) 6rem);
+        background: repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 0.8rem, var(--main-color-bg) 0, var(--main-color-bg) 6rem);
+    }
+
+    75% {
+        background: -webkit-repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 1rem, var(--main-color-bg) 0, var(--main-color-bg) 4rem);
+        background: repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 1rem, var(--main-color-bg) 0, var(--main-color-bg) 4rem);
+    }
+
+    100% {
+        background: -webkit-repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 1.2rem, var(--main-color-bg) 0, var(--main-color-bg) 2rem);
+        background: repeating-linear-gradient(45deg, var(--main-color), var(--main-color) 1.2rem, var(--main-color-bg) 0, var(--main-color-bg) 2rem);
+    }
+}

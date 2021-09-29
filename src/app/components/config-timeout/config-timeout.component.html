@@ -1,0 +1,161 @@
+<div
+  class="form-group timeout-container"
+  [ngClass]="{'disabled': disableTimeOut !== timeOutOptions.onlyTimeout}"
+  (mouseover)="
+    _domService.addClassToElementByClassName('timeout-container', 'on-hover')
+  "
+  (mouseout)="
+    _domService.removeClassToElementByClassName('timeout-container', 'on-hover')
+  "
+>
+  <label class="text-muted">TimeOut</label>
+
+  <div class="counter-container">
+    <div
+      long-press
+      class="material-icons minus-timeout"
+      role="button"
+      [ngClass]="{ 'disabled': timeOut <= minTimeOut }"
+      (click)="minusTimeOut()"
+      (onLongPressing)="minusTimeOut()"
+    >
+      remove_circle
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      autocomplete="off"
+      (focus)="
+        _domService.addClassToElementByClassName(
+          'timeout-container',
+          'on-hover'
+        )
+      "
+      (blur)="
+        _domService.removeClassToElementByClassName(
+          'timeout-container',
+          'on-hover'
+        )
+      "
+      [(ngModel)]="timeOut"
+      [attr.placeholder]="timeOut"
+      [ngClass]="{ class: true }"
+      [disabled]="disableTimeOut !== timeOutOptions.onlyTimeout"
+      (change)="changeTimeOut($event)"
+    />
+    <div
+      long-press
+      class="material-icons plus-timeout"
+      role="button"
+      [ngClass]="{ 'disabled': timeOut >= maxTimeOut }"
+      (click)="plusTimeOut()"
+      (onLongPressing)="plusTimeOut()"
+    >
+      add_circle
+    </div>
+  </div>
+</div>
+
+<div
+  class="form-group extended-timeout-container"
+  [ngClass]="{'disabled': disableTimeOut !== timeOutOptions.onlyExtendedTimeOut}"
+  (mouseover)="
+    _domService.addClassToElementByClassName('extended-timeout-container', 'on-hover')
+  "
+  (mouseout)="
+    _domService.removeClassToElementByClassName('extended-timeout-container', 'on-hover')
+  "
+>
+  <label class="text-muted">Extended TimeOut</label>
+
+  <div class="counter-container">
+    <div
+      long-press
+      class="material-icons minus-timeout"
+      role="button"
+      [ngClass]="{ 'disabled': extendedTimeOut <= minExtendedTimeOut }"
+      (click)="minusExtendedTimeOut()"
+      (onLongPressing)="minusExtendedTimeOut()"
+    >
+      remove_circle
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      autocomplete="off"
+      (focus)="
+        _domService.addClassToElementByClassName(
+          'extended-timeout-container',
+          'on-hover'
+        )
+      "
+      (blur)="
+        _domService.removeClassToElementByClassName(
+          'extended-timeout-container',
+          'on-hover'
+        )
+      "
+      [(ngModel)]="extendedTimeOut"
+      [attr.placeholder]="extendedTimeOut"
+      [ngClass]="{ class: true }"
+      [disabled]="disableTimeOut !== timeOutOptions.onlyExtendedTimeOut"
+      (change)="changeExtendedTimeOut($event)"
+    />
+    <div
+      long-press
+      class="material-icons plus-timeout"
+      role="button"
+      [ngClass]="{ 'disabled': extendedTimeOut >= maxExtendedTimeOut }"
+      (click)="plusExtendedTimeOut()"
+      (onLongPressing)="plusExtendedTimeOut()"
+    >
+      add_circle
+    </div>
+  </div>
+</div>
+
+<div class="form-group checkbox-container">
+
+  <label class="text-muted">Diabled TimeOut</label>
+
+  <div class="form-check">
+    <input
+      id="noneTimeOut"
+      type="radio"
+      name="timeOutOptionCheck"
+      class="form-check-input"
+      [value]="false"
+      (change)="setTimeOutOptions($event)"
+    />
+    <label for="noneTimeOut" class="form-check-label text-muted"
+      >None</label
+    >
+  </div>
+  <div class="form-check">
+    <input
+      id="onlyTimeOut"
+      type="radio"
+      name="timeOutOptionCheck"
+      class="form-check-input"
+      checked="checked"
+      [value]="timeOutOptions.onlyTimeout"
+      (change)="setTimeOutOptions($event)"
+    />
+    <label for="onlyTimeOut" class="form-check-label text-muted"
+      >Only TimeOut</label
+    >
+  </div>
+  <div class="form-check">
+    <input
+      id="onlyExtendedTimeOut"
+      type="radio"
+      name="timeOutOptionCheck"
+      class="form-check-input"
+      [value]="timeOutOptions.onlyExtendedTimeOut"
+      (change)="setTimeOutOptions($event)"
+    />
+    <label for="onlyExtendedTimeOut" class="form-check-label text-muted"
+      >Only Extended TimeOut</label
+    >
+  </div>
+</div>

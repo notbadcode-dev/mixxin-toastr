@@ -1,0 +1,29 @@
+<div class="form-group">
+    <label class="text-muted">Zone</label>
+
+    <div class="border rounded zone-container">
+
+        <ng-container *ngFor="let line of zoneLine">
+
+            <div [attr.class]="line.className">
+
+                <ng-container *ngFor="let column of line.zoneColumns">
+
+                    <div [attr.class]="column.className" [ngClass]="{'not-available': !column.available}">
+
+                        <button (click)="addZone(line, column)">
+                            <span class="material-icons-outlined">add</span>
+                        </button>
+                        
+                    </div>
+
+                </ng-container>
+
+            </div>
+            
+
+        </ng-container>
+
+    </div>
+
+</div>

@@ -31,9 +31,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/assets/notify.scss",
+              "src/assets/_custom_checkbox.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -99,9 +106,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/bootstrap/dist/bootstrap.min.css",
+              "src/assets/notify.scss",
+              "src/assets/_custom_checkbox.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/jquery.slim.min.js",
+              "node_modules/bootstrap/dist/bootstrap.bundle.min.js"
+            ]
           }
         }
       }

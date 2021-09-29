@@ -1,0 +1,243 @@
+@import '../../../assets/variables';
+
+.card {
+
+    .card-header {
+
+        .title {
+            margin-bottom: 0;
+            color: var(--main-color) !important;
+
+            small {
+                color: unset;
+            }
+        }
+
+        .theme-colors {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            div {
+                margin: .4em .25em .4em .25em;
+                width: 15px;
+                min-width: 15px;
+                max-width: 15px;
+                height: 15px;
+                min-height: 15px;
+                max-height: 15px;
+                border-radius: 50%;
+
+                &.selector-info {
+                    background-color: var(--notify-info-dark);
+                    &.active {
+                        background-color: var(--notify-info-bg);
+                        outline: 2px solid var(--notify-info-dark);
+                    } 
+                }
+                &.selector-success {
+                    background-color: var(--notify-success-dark);
+                    &.active {
+                        background-color: var(--notify-success-bg);
+                        outline: 2px solid var(--notify-success-dark);
+                    } 
+                }
+
+                &.selector-warning {
+                    background-color: var(--notify-warning-dark);
+                    &.active {
+                        background-color: var(--notify-warning-bg);
+                        outline: 2px solid var(--notify-warning-dark);
+                    } 
+                }
+
+                &.selector-danger {
+                    background-color: var(--notify-error-dark);
+                    &.active {
+                        background-color: var(--notify-error-bg);
+                        outline: 2px solid var(--notify-error-dark);
+                    } 
+                }
+
+                &.selector-dark {
+                    background-color: #000;
+                    &.active {
+                        background-color: rgba(0, 0, 0, .25);
+                        outline-width: 2px;
+                        outline-style: solid;
+                        outline-color: #000;
+                    } 
+                }
+            }
+        }
+
+    }
+    
+    .card-body {
+    
+        .checkbox-container {
+
+            .form-check {
+                border: .15em solid;
+                border-radius: .3em;
+                margin-bottom: .5em;
+                margin-left: -.25em;
+                font-weight: 600;
+        
+                label {
+                    padding-top: 1px;
+                    padding-left: 2px;
+        
+                    &::before {
+                        padding-left: 0.1em;
+                        padding-top: .05em;
+                    }
+                }
+        
+        
+                &.info-radio {
+                    border-color: var(--notify-info-dark);
+
+                    &.selected {
+                        background-color: var(--notify-info-bg);
+                    }
+        
+                    &:hover {
+                        background-position: left;
+                    }
+            
+                    background: linear-gradient(to left, transparent 50%, var(--notify-info-bg) 50%) right;
+                    background-size: 200%;
+                    transition: .5s ease-out;
+        
+                    input {
+                        + label::before, + label {
+                            color: var(--notify-info-dark);
+                        }
+                    }
+                }
+            
+                &.success-radio {
+                    border-color: var(--notify-success-dark);
+        
+                    &.selected {
+                        background-color: var(--notify-success-bg);
+                    }
+
+                    &:hover {
+                        background-position: left;
+                    }
+            
+                    background: linear-gradient(to left, transparent 50%, var(--notify-success-bg) 50%) right;
+                    background-size: 200%;
+                    transition: .5s ease-out;
+        
+                    input {
+                        + label::before, + label {
+                            color: var(--notify-success-dark);
+                        }
+                    }
+                }
+            
+                &.warning-radio {
+                    border-color: var(--notify-warning-dark);
+        
+                    &.selected {
+                        background-color: var(--notify-warning-bg);
+                    }
+
+                    &:hover {
+                        background-position: left;
+                    }
+            
+                    background: linear-gradient(to left, transparent 50%, var(--notify-warning-bg) 50%) right;
+                    background-size: 200%;
+                    transition: .5s ease-out;
+        
+                    input {
+                        + label::before, + label {
+                            color: var(--notify-warning-dark);
+                        }
+                    }
+                }
+            
+                &.danger-radio {
+                    border-color: var(--notify-error-dark);
+        
+                    &.selected {
+                        background-color: var(--notify-error-bg);
+                    }
+
+                    &:hover {
+                        background-position: left;
+                    }
+            
+                    background: linear-gradient(to left, transparent 50%, var(--notify-error-bg) 50%) right;
+                    background-size: 200%;
+                    transition: .5s ease-out;
+        
+                    input {
+                        + label::before, + label {
+                            color: var(--notify-error-dark);
+                        }
+                    }
+                }
+        
+            }
+        }
+        
+        .button-container > div {
+            .open-toast {
+                color: var(--main-color) !important;
+                border: 2px solid var(--main-color) !important;
+                background: var(--main-color-bg) !important;
+                font-weight: 600;
+        
+                &:hover {
+                    background: var(--main-color-hover) !important
+                }
+            }
+
+            button > span {
+                position: absolute;
+                right: 10%;
+            }
+        }
+
+    }
+
+    .card-footer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: .2em 0 1em 0;
+
+        .col-12 {
+            position: relative;
+            right: 2em;
+
+            i {
+                filter: invert(0.4) sepia(1) saturate(5) hue-rotate(-43deg);
+                top: .3em;
+                position: relative;
+                font-size: 2em;
+            }
+        }
+    }
+
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+
+  }

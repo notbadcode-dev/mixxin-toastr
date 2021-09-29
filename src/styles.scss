@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+$font-family-sans-serif:
+  "poppins",
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;/* You can add global styles to this file, and also import other style files */
+
+  body {
+  
+    &.theme-info {
+      --main-color: var(--notify-info-dark);
+      --main-color-bg: var(--notify-info-bg);
+      --main-color-hover: var(--notify-info-bg-hover);
+    }
+
+    &.theme-success {
+      --main-color: var(--notify-success-dark);
+      --main-color-bg: var(--notify-success-bg);
+      --main-color-hover: var(--notify-success-bg-hover);
+    }
+
+    &.theme-warning {
+      --main-color: var(--notify-warning-dark);
+      --main-color-bg: var(--notify-warning-bg);
+      --main-color-hover: var(--notify-warning-bg-hover);
+    }
+
+    &.theme-danger {
+      --main-color: var(--notify-error-dark);
+      --main-color-bg: var(--notify-error-bg);
+      --main-color-hover: var(--notify-error-bg-hover);
+    }
+
+    &.theme-dark {
+      --main-color: var(--theme-dark-color);
+      --main-color-bg: var(--theme-dark-color-bg-hover);
+      --main-color-hover: rgba(0, 0, 0, .25);
+
+      background-color:  var(--theme-dark-background-color);
+
+      .border {
+        border: 1px solid var(--theme-dark-border-color);
+      }
+
+      .form-group {
+        input, textarea {
+          background-color: var(--theme-dark-color-bg-hover);
+          color: var(--main-color);
+        }
+
+        ::-webkit-input-placeholder,
+        ::-moz-placeholder,
+        ::-ms-placeholder,
+        ::placeholder {
+          color: var(--main-color);
+          opacity: 5;
+        }
+      }
+
+      .card {
+        .card-header, .card-footer {
+          background-color: var(--theme-dark-color-bg-hover);
+        }
+
+        .card-body {
+          background-color:  var(--theme-dark-background-color);
+        }
+      }
+    }
+
+    &:not(.theme-dark) {
+      background-color: #e9ecef;
+    }
+  }
+
+  //Bootstrap reboot
+  button:focus {
+    outline: none;
+  }
+  
