@@ -170,37 +170,39 @@
             
             <div class="col-12 col-sm-3 mt-4">
 
-                <button class="btn btn-light text-muted w-100"
-                    (click)="clearLastNotify()">
-                    <span class="material-icons-round">
-                      remove
-                    </span> 
-                    Close Last Toast
-                </button>
-
-            </div>
-
-            <div class="col-12 col-sm-3 mt-4">
-
               <button class="btn btn-light text-muted w-100"
-                  (click)="clearAllNotify()">
-                  <span class="material-icons-round">
-                    clear_all
-                  </span>
-                  Clear All Toast
+                (click)="clearLastNotify()">
+                <span class="material-icons-round">
+                  remove
+                </span> 
+                Close Last Toast
               </button>
 
             </div>
 
             <div class="col-12 col-sm-3 mt-4">
 
-                <button class="btn btn-light text-muted w-100"
-                    (click)="clearAllNotify()">
-                    <span class="material-icons-round">
-                      download_for_offline
-                    </span>
-                    Download Config
-                </button>
+              <button class="btn btn-light text-muted w-100"
+                (click)="clearAllNotify()">
+                <span class="material-icons-round">
+                  clear_all
+                </span>
+                Clear All Toast
+              </button>
+
+            </div>
+
+            <div class="col-12 col-sm-3 mt-4">
+
+              <a id="downloadElement" style="display:none"></a>
+
+              <button class="btn btn-light text-muted w-100"
+                  (click)="downloadConfiguration()">
+                  <span class="material-icons-round">
+                    download_for_offline
+                  </span>
+                  Download Config
+              </button>
 
             </div>
 

@@ -17,22 +17,22 @@ export class NotifyService {
     }
 
   info(configToast: ConfigToast): void {
-    const { message, title, override } = this.getToastConfig('info', configToast);
+    const { message, title, override } = this.getConfigToast('info', configToast);
     this.toastr.info(message, title, override);
   }
 
   success(configToast: ConfigToast): void {
-    const { message, title, override } = this.getToastConfig('success', configToast);
+    const { message, title, override } = this.getConfigToast('success', configToast);
     this.toastr.success(message, title, override);
   }
 
   warning(configToast: ConfigToast): void {
-    const { message, title, override } = this.getToastConfig('warning', configToast);
+    const { message, title, override } = this.getConfigToast('warning', configToast);
     this.toastr.warning(message, title, override);
   }
 
   error(configToast: ConfigToast): void {
-    const { message, title, override } = this.getToastConfig('error', configToast);
+    const { message, title, override } = this.getConfigToast('error', configToast);
     this.toastr.error(message, title, override);
   }
 
@@ -45,7 +45,7 @@ export class NotifyService {
     this.toastr.clear(lastNotifyId);
   }
 
-  getToastConfig(eventName: string, configToast: ConfigToast): { message?: string | undefined, title?: string | undefined, override?: Partial<IndividualConfig> | undefined } {
+  transformConfigToast(eventName: string, configToast: ConfigToast): Partial<IndividualConfig> | undefined {
     const opt: GlobalConfig = JSON.parse(JSON.stringify(this.options));
 
     opt.progressBar = configToast.progressBar ?? opt.progressBar;
@@ -59,6 +59,12 @@ export class NotifyService {
     opt.closeButton = configToast.closeButton ?? opt.closeButton;
     opt.easeTime = configToast.easeTime ?? opt.easeTime;
 
+    return opt;
+  }
+
+  transformGlobalConfigToast(configToast: ConfigToast): any {
+    const opt: GlobalConfig = JSON.parse(JSON.stringify(this.options));
+
     this.toastr.toastrConfig.preventDuplicates = configToast.preventDuplicates ?? opt.preventDuplicates;
     this.toastr.toastrConfig.countDuplicates = configToast.countDuplicates ?? opt.countDuplicates;
     this.toastr.toastrConfig.resetTimeoutOnDuplicate = configToast.resetTimeoutOnDuplicate ?? opt.resetTimeoutOnDuplicate;
@@ -67,10 +73,15 @@ export class NotifyService {
     this.toastr.toastrConfig.maxOpened = configToast.maxOpened ?? opt.maxOpened;
     this.toastr.toastrConfig.autoDismiss = configToast.autoDismiss ?? opt.autoDismiss;
 
+    return this.toastr.toastrConfig;
+  }
+
+  getConfigToast(eventName: string, configToast: ConfigToast): { message?: string | undefined, title?: string | undefined, override?: Partial<IndividualConfig> | undefined } {
+    this.toastr.toastrConfig = this.transformGlobalConfigToast(configToast);
     return {
       title: configToast?.title?.length === 0 || configToast.title === null ? 'Mixxin Toastr' : configToast.title,
       message: configToast?.message?.length === 0 || configToast.message === null ?  `it's a beautiful toastr` : configToast.message,
-      override: opt
+      override: this.transformConfigToast(eventName, configToast),
     }
   }
 

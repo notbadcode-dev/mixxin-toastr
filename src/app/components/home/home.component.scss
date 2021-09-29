@@ -27,6 +27,8 @@
                 min-height: 15px;
                 max-height: 15px;
                 border-radius: 50%;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
 
                 &.selector-info {
                     background-color: var(--notify-info-dark);
@@ -63,9 +65,7 @@
                     background-color: #000;
                     &.active {
                         background-color: rgba(0, 0, 0, .25);
-                        outline-width: 2px;
-                        outline-style: solid;
-                        outline-color: #000;
+                        outline: 2px solid #000;
                     } 
                 }
             }

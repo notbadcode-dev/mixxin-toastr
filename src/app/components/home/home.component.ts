@@ -131,6 +131,31 @@ export class HomeComponent implements OnInit {
     this._notifyService.clearAll();
   }
 
+  downloadConfiguration(): void {
+    const config: any = {
+      IndividualConfig: this._notifyService.transformConfigToast(this.currentTheme, this.configToast),
+      GlobalConfig: this._notifyService.transformGlobalConfigToast(this.configToast),
+      Resources: {
+        ProjectUrl: 'https://github.com/notbadcode-dev/mixxin-toastr',
+        NotifyCustomStyleUrl: 'https://github.com/notbadcode-dev/mixxin-toastr/blob/master/src/assets/notify.scss'
+      },
+      Author: {
+        Name: 'notBadCode · Carlos Balaguer',
+        Website: 'https://website.notbadcode.xyz/#/me',
+        LinkedIn: 'https://www.linkedin.com/in/carlosbgr/'
+
+      }
+    }
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(config));
+    const downloadElement = document.getElementById('downloadElement');
+
+    if (downloadElement && downloadElement !== null) {
+      downloadElement?.setAttribute("href",     dataStr     );
+      downloadElement?.setAttribute("download", "toast-config.json");
+      downloadElement?.click();
+    }
+  }
+
   changeTheme(themeClass: string): void {
     if (this.currentTheme !== themeClass) {
       this._domService.addClassToElementByClassName('theme', `theme-${themeClass}`);
