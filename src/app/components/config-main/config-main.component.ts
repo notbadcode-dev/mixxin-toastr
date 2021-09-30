@@ -32,7 +32,7 @@ export class ConfigMainComponent implements OnInit {
       message: new FormControl(''),
       enableHtml: new FormControl(false),
       tapToDismiss: new FormControl(false),
-      closeButton: new FormControl(false),
+      closeButton: new FormControl(true),
     });
   }
 
@@ -72,11 +72,11 @@ export class ConfigMainComponent implements OnInit {
 
   initGlobalConfigForm(): void {
     this.globalConfigForm = this._fb.group({
-      preventDuplicates: new FormControl(false),
+      preventDuplicates: new FormControl(true),
       countDuplicates: new FormControl(false),
       resetTimeoutOnDuplicate: new FormControl(false),
       includeTitleDuplicates: new FormControl(false),
-      newestOnTop: new FormControl(false),
+      newestOnTop: new FormControl(true),
       autoDismiss: new FormControl(true),
     });
   }

@@ -8,7 +8,8 @@
     _domService.removeClassToElementByClassName('timeout-container', 'on-hover')
   "
 >
-  <label class="text-muted">TimeOut</label>
+  <label class="text-muted"
+    data-toggle="tooltip" title="Timeout for set default toast timeout">TimeOut</label>
 
   <div class="counter-container">
     <div
@@ -66,7 +67,8 @@
     _domService.removeClassToElementByClassName('extended-timeout-container', 'on-hover')
   "
 >
-  <label class="text-muted">Extended TimeOut</label>
+  <label class="text-muted"
+    data-toggle="tooltip" title="Extended timeout for set default toast timeout">Extended TimeOut</label>
 
   <div class="counter-container">
     <div
@@ -118,7 +120,8 @@
 
   <label class="text-muted">Diabled TimeOut</label>
 
-  <div class="form-check">
+  <div class="form-check"
+    data-toggle="tooltip" data-placement="left" title="Not appy any option form timeout">
     <input
       id="noneTimeOut"
       type="radio"
@@ -131,7 +134,8 @@
       >None</label
     >
   </div>
-  <div class="form-check">
+  <div class="form-check"
+    data-toggle="tooltip" data-placement="left" title="Use timeout">
     <input
       id="onlyTimeOut"
       type="radio"
@@ -145,7 +149,8 @@
       >Only TimeOut</label
     >
   </div>
-  <div class="form-check">
+  <div class="form-check"
+    data-toggle="tooltip" data-placement="left" title="Use extended timeout">
     <input
       id="onlyExtendedTimeOut"
       type="radio"

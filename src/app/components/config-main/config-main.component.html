@@ -3,20 +3,23 @@
     <form [formGroup]="mainConfigForm">
 
         <div class="form-group">
-            <label for="title" class="text-muted">Title</label>
+            <label for="title" class="text-muted"
+              data-toggle="tooltip" title="Title for set default toast title">Title</label>
             <input id="title" type="text" class="form-control" autocomplete="off" autofocus
                 formControlName="title">
         </div>
 
         <div class="form-group">
-            <label for="message" class="text-muted">Message</label>
+            <label for="message" class="text-muted"
+              data-toggle="tooltip" title="Title for set default toast message">Message</label>
             <textarea id="message" type="text" class="form-control" autocomplete="off" rows="3"
                 formControlName="message"></textarea>
         </div>
 
         <div class="form-group checkbox-container">
 
-            <div class="form-check">
+            <div class="form-check"
+              data-toggle="tooltip" data-placement="left" title="Swicth enable Html on toast message">
                 <input
                   id="enableHtml"
                   type="checkbox"
@@ -28,7 +31,8 @@
                 >
               </div>
 
-              <div class="form-check">
+              <div class="form-check"
+                data-toggle="tooltip" data-placement="left" title="Swicth tap to dismiss option">
                 <input
                   id="tapToDismiss"
                   type="checkbox"
@@ -40,7 +44,8 @@
                 >
               </div>
 
-              <div class="form-check">
+              <div class="form-check"
+                data-toggle="tooltip" data-placement="left" data-placement="left" title="Swicth show close toast button option">
                 <input
                   id="closeButton"
                   type="checkbox"
@@ -61,7 +66,8 @@
       <div class="form-group checkbox-container">
         <label for="message" class="text-muted">Global Options</label>
 
-            <div class="form-check">
+            <div class="form-check"
+              data-toggle="tooltip" data-placement="left" title="Swicth prevent duplicates">
               <input
                 id="preventDuplicates"
                 type="checkbox"
@@ -73,7 +79,8 @@
               >
             </div>
 
-            <div class="form-check">
+            <div class="form-check"
+              data-toggle="tooltip" data-placement="left" title="Swicth count duplocate toast">
               <input
                 id="countDuplicates"
                 type="checkbox"
@@ -85,7 +92,8 @@
               >
             </div>
 
-            <div class="form-check">
+            <div class="form-check"
+              data-toggle="tooltip" data-placement="left" title="Swicth reset input on duplicates">
               <input
                 id="resetTimeOutOnDuplicate"
                 type="checkbox"
@@ -97,7 +105,8 @@
               >
             </div>
 
-            <div class="form-check">
+            <div class="form-check"
+            data-toggle="tooltip" data-placement="left" title="Swicth innclude title for on control duplicates">
               <input
                 id="includeTitleForDuplicate"
                 type="checkbox"
@@ -109,7 +118,8 @@
               >
             </div>
 
-            <div class="form-check">
+            <div class="form-check"
+              data-toggle="tooltip" data-placement="left" title="Swicth new toast on tap option">
               <input
                 id="newNotifyOnTop"
                 type="checkbox"
@@ -121,7 +131,8 @@
               >
             </div>
 
-            <div class="form-check">
+            <div class="form-check"
+              data-toggle="tooltip" data-placement="left" title="Swicth auto dismiss option">
               <input
                 id="autoDismiss"
                 type="checkbox"

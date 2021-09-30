@@ -30,7 +30,12 @@ export class ConfigTimeoutComponent implements OnInit {
   ngOnInit(): void {}
 
   changeTimeOut(event: any): void {
-    this.timeOut = (parseInt(event.target.value, 10) < 0) ? this.timeOut = TIMEOUT_LIMIT.DEFAULT_TIMEOUT : this.timeOut;
+    if (event.target.value === '') {;
+      this.timeOut = TIMEOUT_LIMIT.DEFAULT_TIMEOUT;
+    } else {
+      this.timeOut = (parseInt(event.target.value, 10) < 0) ? this.timeOut = TIMEOUT_LIMIT.DEFAULT_TIMEOUT : this.timeOut;
+    }
+
     this.updateTimeOutEmitter();
   }
 
@@ -45,7 +50,12 @@ export class ConfigTimeoutComponent implements OnInit {
   }
 
   changeExtendedTimeOut(event: any): void {
-    this.extendedTimeOut = (parseInt(event.target.value, 10) < 0) ? this.extendedTimeOut = TIMEOUT_LIMIT.DEFAULT_EXTENDED_TIMEOUT : this.extendedTimeOut;
+    if (event.target.value === '') {;
+      this.extendedTimeOut = TIMEOUT_LIMIT.DEFAULT_EXTENDED_TIMEOUT;
+    } else {
+      this.extendedTimeOut = (parseInt(event.target.value, 10) < 0) ? this.extendedTimeOut = TIMEOUT_LIMIT.DEFAULT_EXTENDED_TIMEOUT : this.extendedTimeOut;
+    }
+
     this.updateTimeOutEmitter();
   }
 
@@ -60,11 +70,15 @@ export class ConfigTimeoutComponent implements OnInit {
   }
 
   setTimeOutOptions(event: any): void {
-    this.disableTimeOut = event.target.value;
+    this.disableTimeOut = event.target.value === 'false' ? false : event.target.value;
     this.updateTimeOutEmitter();
   }
 
   updateTimeOutEmitter(): void {
-    this.updateTimeOut.emit({timeOut: this.timeOut, extendedTimeOut: this.extendedTimeOut, disableTimeOut: this.disableTimeOut });
+    this.updateTimeOut.emit({
+      timeOut: this.disableTimeOut === this.timeOutOptions.onlyTimeout ? 0 : this.timeOut,
+      extendedTimeOut: this.disableTimeOut === this.timeOutOptions.onlyTimeout ? 0 : this.extendedTimeOut,
+      disableTimeOut: this.disableTimeOut,
+    });
   }
 }

@@ -23,7 +23,12 @@ export class ConfigToastComponent implements OnInit {
   }
 
   changeMaximum(event: any): void {
-    this.maximum = (parseInt(event.target.value, 10) < 0) ? 0 : parseInt(event.target.value, 10);
+    if (event.target.value === '') {;
+      this.maximum = 0;
+    } else {
+      this.maximum = (parseInt(event.target.value, 10) < 0) ? 0 : parseInt(event.target.value, 10);
+    }
+
     this.updateToastEmitter();
   }
 
@@ -38,7 +43,12 @@ export class ConfigToastComponent implements OnInit {
   }
 
   changeEaseTime(event: any): void {
-    this.easeTime = (parseInt(event.target.value, 10) < 0) ? 0 : parseInt(event.target.value, 10);
+    if (event.target.value === '') {;
+      this.easeTime = 0;
+    } else {
+      this.easeTime = (parseInt(event.target.value, 10) < 0) ? 0 : parseInt(event.target.value, 10);
+    }
+  
     this.updateToastEmitter();
   }
 

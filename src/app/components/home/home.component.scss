@@ -207,20 +207,41 @@
     }
 
     .card-footer {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding: .2em 0 1em 0;
+        padding-top: 0.4em;
+        padding-bottom: 0;
 
-        .col-12 {
+        i {
+            filter: invert(0.4) sepia(1) saturate(5) hue-rotate(-43deg);
+            top: .3em;
             position: relative;
-            right: 2em;
+            font-size: 2em;
+        }
 
-            i {
-                filter: invert(0.4) sepia(1) saturate(5) hue-rotate(-43deg);
-                top: .3em;
-                position: relative;
-                font-size: 2em;
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            li {
+                a > span {
+                    font-size: 2em;
+                    position: relative;
+                    top: .1em;
+                    transform: rotate(45deg);
+                    margin-left: .5em;
+                    color: var(--main-color);
+                }
+
+                a > svg {
+                    fill: var(--main-color);
+                }
+
+                a > * {
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
             }
         }
     }

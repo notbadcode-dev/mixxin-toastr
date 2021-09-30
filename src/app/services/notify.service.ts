@@ -50,8 +50,8 @@ export class NotifyService {
 
     opt.progressBar = configToast.progressBar ?? opt.progressBar;
     opt.progressAnimation = configToast.progressAnimation ??  opt.progressAnimation;
-    opt.timeOut = 0;
-    opt.disableTimeOut = true;
+    opt.timeOut = configToast.timeOut ??  opt.timeOut;;
+    opt.disableTimeOut = configToast.disableTimeOut ??  opt.disableTimeOut;;
     opt.positionClass = configToast.positionClass ??  opt.positionClass;
     opt.toastClass = `${TOAST_CLASS_BASE} notify-${eventName}`;
     opt.enableHtml = configToast.enableHtml ?? opt.enableHtml;

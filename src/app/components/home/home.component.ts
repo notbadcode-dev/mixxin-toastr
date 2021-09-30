@@ -11,6 +11,8 @@ import { NotifyService } from 'src/app/services/notify.service';
 
 import { MainButton } from '../../models/button.model';
 
+declare const $: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,19 +24,10 @@ export class HomeComponent implements OnInit {
 
   mainButtons: MainButton[] = []
   notifyConfigForm: FormGroup = new FormGroup({});
-  configToast: ConfigToast = {
-    title: '',
-    message: '',
-    progressBar: false,
-    progressAnimation: ProgressAnimationType.decreasing,
-    timeOut: TIMEOUT_LIMIT.DEFAULT_TIMEOUT,
-    extendedTimeOut: TIMEOUT_LIMIT.DEFAULT_EXTENDED_TIMEOUT,
-    disableTimeOut: false,
-    positionClass: PositionClass.topRight,
-    enableHtml: false,
-    tapToDismiss: false,
-    closeButton: false,
-  };
+  configToast: ConfigToast = {};
+
+  repositoryLink: string = 'https://github.com/notbadcode-dev/mixxin-toastr';
+  websiteLink: string = 'https://website.notbadcode.xyz/';
 
   currentTheme: string = 'info';
   selectedToastType: ToastType = ToastType.info;
@@ -46,7 +39,12 @@ export class HomeComponent implements OnInit {
     private _fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.resetConfig();
     this.autoDetectDarkMode();
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
   }
 
   resetConfig(): void {
@@ -56,12 +54,21 @@ export class HomeComponent implements OnInit {
       progressBar: false,
       progressAnimation: ProgressAnimationType.decreasing,
       timeOut: TIMEOUT_LIMIT.DEFAULT_TIMEOUT,
-      extendedTimeOut: TIMEOUT_LIMIT.DEFAULT_EXTENDED_TIMEOUT,
+      extendedTimeOut: 0,
       disableTimeOut: false,
       positionClass: PositionClass.topRight,
       enableHtml: false,
       tapToDismiss: false,
-      closeButton: false,
+      closeButton: true,
+      preventDuplicates: true,
+      countDuplicates: false,
+      resetTimeoutOnDuplicate: false,
+      includeTitleDuplicates: false,
+      newestOnTop: true,
+      maxOpened: 0,
+      autoDismiss: true,
+      easeTime: 300,
+
     };
   }
 
