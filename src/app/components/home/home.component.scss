@@ -233,14 +233,21 @@
                     color: var(--main-color);
                 }
 
-                a > svg {
-                    fill: var(--main-color);
+                a {
+                    svg {
+                        fill: var(--main-color);
+                    }
                 }
 
                 a > * {
                     &:hover {
                         opacity: .5;
                     }
+                }
+
+                .website-link > span {
+                    top: .3em;
+                    margin-left: .3em;
                 }
             }
         }

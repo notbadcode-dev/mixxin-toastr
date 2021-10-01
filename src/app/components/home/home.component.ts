@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   notifyConfigForm: FormGroup = new FormGroup({});
   configToast: ConfigToast = {};
 
+  linkdInLink: string = 'https://website.notbadcode.xyz/';
   repositoryLink: string = 'https://github.com/notbadcode-dev/mixxin-toastr';
   websiteLink: string = 'https://website.notbadcode.xyz/';
 
