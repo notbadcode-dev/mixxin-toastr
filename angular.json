@@ -117,6 +117,10 @@
               "node_modules/bootstrap/dist/bootstrap.bundle.min.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
