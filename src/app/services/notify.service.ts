@@ -79,7 +79,7 @@ export class NotifyService {
   getConfigToast(eventName: string, configToast: ConfigToast): { message?: string | undefined, title?: string | undefined, override?: Partial<IndividualConfig> | undefined } {
     this.toastr.toastrConfig = this.transformGlobalConfigToast(configToast);
     return {
-      title: configToast?.title?.length === 0 || configToast.title === null ? 'Mixxin Toastr' : configToast.title,
+      title: configToast?.title,
       message: configToast?.message?.length === 0 || configToast.message === null ?  `it's a beautiful toastr` : configToast.message,
       override: this.transformConfigToast(eventName, configToast),
     }
