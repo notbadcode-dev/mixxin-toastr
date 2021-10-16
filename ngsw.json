@@ -1,0 +1,121 @@
+{
+  "configVersion": 1,
+  "timestamp": 1634405810285,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.3e4a32af1adb3b2014bf.js",
+        "/manifest.webmanifest",
+        "/polyfills.d1461da240747fb4d67e.js",
+        "/runtime.34e15d93a0084c87c216.js",
+        "/scripts.7429773ecea48d33d9aa.js",
+        "/styles.8943530d136f513a3969.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/MaterialIcons-Regular.69a05f7f816de467f8c5.ttf",
+        "/MaterialIconsOutlined-Regular.5c6dbac17165ec012532.otf",
+        "/MaterialIconsRound-Regular.d7e3f0d0d06a2e34f3c0.otf",
+        "/MaterialIconsTwoTone-Regular.a757e1275796392ebe98.otf",
+        "/assets/fonts/MaterialIcons-Regular.codepoints",
+        "/assets/fonts/MaterialIcons-Regular.ttf",
+        "/assets/fonts/MaterialIconsOutlined-Regular.codepoints",
+        "/assets/fonts/MaterialIconsOutlined-Regular.otf",
+        "/assets/fonts/MaterialIconsRound-Regular.codepoints",
+        "/assets/fonts/MaterialIconsRound-Regular.otf",
+        "/assets/fonts/MaterialIconsSharp-Regular.codepoints",
+        "/assets/fonts/MaterialIconsSharp-Regular.otf",
+        "/assets/fonts/MaterialIconsTwoTone-Regular.codepoints",
+        "/assets/fonts/MaterialIconsTwoTone-Regular.otf",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/scripts/popper.min.js",
+        "/assets/styles/_custom_checkbox.scss",
+        "/assets/styles/_fonts.scss",
+        "/assets/styles/_variables.scss",
+        "/assets/styles/notify.scss"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/MaterialIcons-Regular.69a05f7f816de467f8c5.ttf": "40c76a23c94ec06287c97ad29031325ba1290886",
+    "/MaterialIconsOutlined-Regular.5c6dbac17165ec012532.otf": "e4f55edbf6e24c3ea13bb67a01290d3c1a4a6e4e",
+    "/MaterialIconsRound-Regular.d7e3f0d0d06a2e34f3c0.otf": "4f845b50b00eb4c618d1134983721e0e8d91bebe",
+    "/MaterialIconsTwoTone-Regular.a757e1275796392ebe98.otf": "088145e50859eeedf8c38d124489864a679a7fd6",
+    "/assets/fonts/MaterialIcons-Regular.codepoints": "e6b8817b6f1dfc8656aeb930770b002d30cd29c4",
+    "/assets/fonts/MaterialIcons-Regular.ttf": "40c76a23c94ec06287c97ad29031325ba1290886",
+    "/assets/fonts/MaterialIconsOutlined-Regular.codepoints": "07e67183ada8a7b6b8cf189c904809a1bb8f21dd",
+    "/assets/fonts/MaterialIconsOutlined-Regular.otf": "e4f55edbf6e24c3ea13bb67a01290d3c1a4a6e4e",
+    "/assets/fonts/MaterialIconsRound-Regular.codepoints": "8f5bc0dd377f8d0d38c98cc9be834ad9b16a13d4",
+    "/assets/fonts/MaterialIconsRound-Regular.otf": "4f845b50b00eb4c618d1134983721e0e8d91bebe",
+    "/assets/fonts/MaterialIconsSharp-Regular.codepoints": "8c48d142537154dabf833e236c74bd7a9df05fe4",
+    "/assets/fonts/MaterialIconsSharp-Regular.otf": "c9eac20745bbe16d9af4494085afa6b3c55fc627",
+    "/assets/fonts/MaterialIconsTwoTone-Regular.codepoints": "fe5fcfdc9fb84d7d4378703f8d99b15ff3401a4b",
+    "/assets/fonts/MaterialIconsTwoTone-Regular.otf": "088145e50859eeedf8c38d124489864a679a7fd6",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/scripts/popper.min.js": "a67891d01e9d29be3a4003a5fee179eadcf296ec",
+    "/assets/styles/_custom_checkbox.scss": "d8414333e91f11a25086c213d860877741e5a488",
+    "/assets/styles/_fonts.scss": "f541bd90c205ec2f09dbb3aecf86a561f5158afd",
+    "/assets/styles/_variables.scss": "9972e43863d2ebafe28b30964f9205afd64e0e8c",
+    "/assets/styles/notify.scss": "6601e30daea21212de9d5bdbb49a6ccbe123db23",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "6c695b654ed4e880ec45c068a4cf058997376814",
+    "/main.3e4a32af1adb3b2014bf.js": "e9375b698d408d09c44afe93bbbacc04cdcc2452",
+    "/manifest.webmanifest": "e7baee910c5a3c1b87c3e260ea6890b4e0706b77",
+    "/polyfills.d1461da240747fb4d67e.js": "8832f96a3395ecd9f79b4dcbdf3ad2d0f46b45cc",
+    "/runtime.34e15d93a0084c87c216.js": "fa091d68559eea17c763e175260c08c3e003e40d",
+    "/scripts.7429773ecea48d33d9aa.js": "0dee58e2b035f787502749fa974310217b8593c3",
+    "/styles.8943530d136f513a3969.css": "c251b9e353c6d9b8dbd8139256534eceaaea3799"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
