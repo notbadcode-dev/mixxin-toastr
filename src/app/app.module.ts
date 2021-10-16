@@ -14,6 +14,8 @@ import { ConfigProgressbarComponent } from './components/config-progressbar/conf
 import { ConfigToastZoneComponent } from './components/config-toast-zone/config-toast-zone.component';
 import { ConfigMainComponent } from './components/config-main/config-main.component';
 import { ConfigToastComponent } from './components/config-toast/config-toast.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,12 @@ import { ConfigToastComponent } from './components/config-toast/config-toast.com
     FormsModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
