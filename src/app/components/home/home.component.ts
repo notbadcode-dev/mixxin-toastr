@@ -155,12 +155,15 @@ export class HomeComponent implements OnInit {
       }
     }
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(config));
-    const downloadElement = document.getElementById('downloadElement');
+    const link = document.createElement('a');
 
-    if (downloadElement && downloadElement !== null) {
-      downloadElement?.setAttribute("href",     dataStr     );
-      downloadElement?.setAttribute("download", "toast-config.json");
-      downloadElement?.click();
+    if (link && link !== null) {
+      link.setAttribute('target', '_blank');
+      link?.setAttribute("href",  dataStr );
+      link.setAttribute('download', `toast-config.json`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     }
   }
 

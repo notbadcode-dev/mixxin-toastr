@@ -206,8 +206,6 @@
 
             <div class="col-12 col-md-6 col-xl-3 mt-4">
 
-              <a id="downloadElement" style="display:none"></a>
-
               <button class="btn btn-light text-muted w-100"
                 data-toggle="tooltip" title="Downnload current configuration"
                   (click)="downloadConfiguration()">
@@ -242,7 +240,7 @@
               <ul>
 
                 <li>
-                  <a [attr.href]=linkdInLink target="_blank"
+                  <a [attr.href]=linkdInLink target="_blank" rel="noopener"
                     data-toggle="tooltip" title="Open my linkdin site">
                     <span>
                       <svg data-name="Logo" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
@@ -253,7 +251,7 @@
                 </li>
 
                 <li>
-                  <a [attr.href]=repositoryLink target="_blank"
+                  <a [attr.href]=repositoryLink target="_blank" rel="noopener"
                     data-toggle="tooltip" title="Open project repository">
                     <span>
                       <svg
@@ -273,7 +271,7 @@
                 </li>
 
                 <li>
-                  <a [attr.href]=websiteLink target="_blank" class="website-link"
+                  <a [attr.href]=websiteLink target="_blank" rel="noopener" class="website-link"
                     data-toggle="tooltip" title="Open my website and show my portfolio">
                     <span class="material-icons-outlined">
                       link
