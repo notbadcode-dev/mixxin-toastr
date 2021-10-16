@@ -10,6 +10,7 @@
     
     --notify-info: #8ab4f8;
     --notify-info-dark: #0d47a1;
+    --notify-info-icon: var(--notify-info-dark);
     --notify-info-bg: rgba(138, 180, 248, var(--percent-bg));
     --notify-info-bg-hover: rgba(13, 71,161, var(--percent-bg-hover));
     --notify-info-shadow: rgba(13, 71,161, var(--percent-shadow));
@@ -17,6 +18,7 @@
 
     --notify-success: #00C851;
     --notify-success-dark: #007E33;
+    --notify-success-icon: var(--notify-success-dark);
     --notify-success-bg: rgba(129, 201, 149, var(--percent-bg));
     --notify-success-bg-hover: rgba(0, 126, 51, var(--percent-bg-hover));
     --notify-success-shadow: rgba(0, 126, 51, var(--percent-shadow));
@@ -24,6 +26,7 @@
     
     --notify-warning: #fdd663;
     --notify-warning-dark: #ff8800;
+    --notify-warning-icon: var(--notify-warning-dark);
     --notify-warning-bg: rgba(253, 214, 99 , var(--percent-bg));
     --notify-warning-bg-hover: rgba(255, 136, 0, var(--percent-bg-hover));
     --notify-warning-shadow: rgba(255, 136, 0, var(--percent-shadow));
@@ -31,12 +34,14 @@
 
     --notify-error: #f28b82;
     --notify-error-dark: #CC0000;
+    --notify-error-icon: var(--notify-error-dark);
     --notify-error-bg: rgba(242, 139, 130, var(--percent-bg));
     --notify-error-bg-hover: rgba(204, 0, 0, var(--percent-bg-hover));
     --notify-error-shadow: rgba(204, 0, 0, var(--percent-shadow));
     --notify-error-icon: '\e5c9';
 
     --theme-dark-color: #aaadb2;
+    --theme-dark-icon: #202124;
     --theme-dark-color-bg-hover: #303134;
     --theme-dark-background-color: #202124;
     --theme-dark-border-color: #5f6368;
@@ -54,6 +59,7 @@
     --minimize-icon: '\e931';
 
     --main-color: var(--notify-info-dark);
+    --main-icon-color: var(--notify-info-dark);
     --main-color-bg: var(--notify-info-bg);
     --main-color-hover: var(--notify-info-bg-hover);
 
