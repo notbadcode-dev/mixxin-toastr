@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { SwUpdate } from '@angular/service-worker';
 import { environment } from 'src/environments/environment';
 import { AppModule } from './app.module';
 import { DomService } from './services/dom.service';
@@ -12,11 +13,12 @@ import { DomService } from './services/dom.service';
 export class AppComponent {
   title = 'mixxin-toastr';
 
-  constructor(private _domService: DomService) {}
+  constructor(
+    private _domService: DomService,
+    private swUpdate: SwUpdate) {}
 
   ngOnInit(): void {
     this.autoDetectDarkMode();
-
   }
 
   autoDetectDarkMode() {
@@ -27,11 +29,16 @@ export class AppComponent {
     }
   }
 
-  addServiceWorker(): void {
-    platformBrowserDynamic().bootstrapModule(AppModule).then(() => {
-      if ('serviceWorker' in navigator && environment.production) {
-         navigator.serviceWorker.register('ngsw-worker.js');
-      }
-   }).catch(err => console.log(err));
+  newVersionInformed(): void {
+    if (this.swUpdate.isEnabled) {
+
+      this.swUpdate.available.subscribe(() => {
+
+          if(confirm("New version available. Load New Version?")) {
+
+              window.location.reload();
+          }
+      });
+  }  
   }
 }
