@@ -19,30 +19,35 @@ $font-family-sans-serif:
       --main-color: var(--notify-info-dark);
       --main-color-bg: var(--notify-info-bg);
       --main-color-hover: var(--notify-info-bg-hover);
+      --main-icon-color: var(--notify-info-dark);
     }
 
     &.theme-success {
       --main-color: var(--notify-success-dark);
       --main-color-bg: var(--notify-success-bg);
       --main-color-hover: var(--notify-success-bg-hover);
+      --main-icon-color: var(--notify-success-dark);
     }
 
     &.theme-warning {
       --main-color: var(--notify-warning-dark);
       --main-color-bg: var(--notify-warning-bg);
       --main-color-hover: var(--notify-warning-bg-hover);
+      --main-icon-color: var(--notify-warning-dark);
     }
 
     &.theme-danger {
       --main-color: var(--notify-error-dark);
       --main-color-bg: var(--notify-error-bg);
       --main-color-hover: var(--notify-error-bg-hover);
+      --main-icon-color: var(--notify-error-dark);
     }
 
     &.theme-dark {
       --main-color: var(--theme-dark-color);
       --main-color-bg: var(--theme-dark-color-bg-hover);
       --main-color-hover: rgba(0, 0, 0, .25);
+      --main-icon-color: var(--theme-dark-icon);
 
       background-color:  var(--theme-dark-background-color);
 
@@ -73,6 +78,14 @@ $font-family-sans-serif:
         .card-body {
           background-color:  var(--theme-dark-background-color);
         }
+      }
+
+      .text-muted {
+        color: #aeb4ba !important;
+      }
+
+      .btn-light {
+        background: rgba(0,0,0,.25);
       }
     }
 

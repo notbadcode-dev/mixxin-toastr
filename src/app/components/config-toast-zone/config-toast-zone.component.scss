@@ -30,7 +30,7 @@
                     border: 1px dashed var(--main-color);
                     color: var(--main-color);
                     background: #fff;
-                    opacity: .5;
+                    opacity: .8;
 
                     transition: opacity 150ms ease 120ms;
                     -webkit-transition: opacity 150ms ease 120ms;
@@ -47,8 +47,8 @@
                         font-size: 1.2rem;
                         background: #fff;
                         border-radius: 50%;
+                        color: var(--main-icon-color);
                     }
-
                 }
 
                 &.added {
