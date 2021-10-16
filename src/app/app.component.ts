@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { DomService } from './services/dom.service';
 
-import 'hammerjs'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
