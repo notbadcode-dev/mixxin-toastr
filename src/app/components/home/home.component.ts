@@ -145,7 +145,7 @@ export class HomeComponent implements OnInit {
       GlobalConfig: this._notifyService.transformGlobalConfigToast(this.configToast),
       Resources: {
         ProjectUrl: 'https://github.com/notbadcode-dev/mixxin-toastr',
-        NotifyCustomStyleUrl: 'https://github.com/notbadcode-dev/mixxin-toastr/blob/master/src/assets/notify.scss'
+        NotifyCustomStyleUrl: 'https://github.com/notbadcode-dev/mixxin-toastr/blob/master/src/assets/styles/notify.scss'
       },
       Author: {
         Name: 'notBadCode · Carlos Balaguer',

@@ -31,13 +31,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "src/assets/notify.scss",
-              "src/assets/_custom_checkbox.scss"
+              "src/assets/styles/_fonts.scss",
+              "src/assets/styles/_variables.scss",
+              "src/assets/styles/notify.scss",
+              "src/assets/styles/_custom_checkbox.scss",
+              "src/styles.scss"
             ],
             "scripts": [
+              "src/assets/scripts/popper.min.js",
               "node_modules/jquery/dist/jquery.slim.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
@@ -106,15 +109,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/assets/styles/_fonts.scss",
+              "src/assets/styles/_variables.scss",
               "node_modules/ngx-toastr/toastr.css",
-              "node_modules/bootstrap/dist/bootstrap.min.css",
-              "src/assets/notify.scss",
-              "src/assets/_custom_checkbox.scss"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/assets/styles/notify.scss",
+              "src/assets/styles/_custom_checkbox.scss",
+              "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/jquery.slim.min.js",
-              "node_modules/bootstrap/dist/bootstrap.bundle.min.js"
+              "src/assets/scripts/popper.min.js",
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           }
         },
