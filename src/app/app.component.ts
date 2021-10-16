@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { SwUpdate } from '@angular/service-worker';
-import { environment } from 'src/environments/environment';
-import { AppModule } from './app.module';
 import { DomService } from './services/dom.service';
 
+import 'hammerjs'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -39,6 +37,6 @@ export class AppComponent {
               window.location.reload();
           }
       });
-  }  
+    }  
   }
 }
