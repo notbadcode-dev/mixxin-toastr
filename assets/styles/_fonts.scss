@@ -2,10 +2,10 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
     src: local('Material Icons'),
          local('MaterialIcons-Regular'),
-         url('../../assets/fonts/MaterialIcons-Regular.ttf') format('truetype');      
+         url('../../assets/fonts/MaterialIcons-Regular.ttf') format('truetype');
+    font-display: swap;
  }
 
  @font-face {
@@ -22,20 +22,20 @@
   font-family: 'Material Icons Round';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: local('Material Icons Round'),
        local('MaterialIcons-round'),
-       url('../../assets/fonts/MaterialIconsRound-Regular.otf') format('opentype');  
+       url('../../assets/fonts/MaterialIconsRound-Regular.otf') format('opentype');
+  font-display: swap;  
 }
 
 @font-face {
   font-family: 'Material Icons TwoTone';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: local('Material Icons TwoTone'),
        local('MaterialIcons-TwoTone'),
-       url('../../assets/fonts/MaterialIconsTwoTone-Regular.otf') format('opentype');     
+       url('../../assets/fonts/MaterialIconsTwoTone-Regular.otf') format('opentype');
+  font-display: swap;
 }
 
 .material-icons,
