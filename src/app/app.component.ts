@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { environment } from 'src/environments/environment';
+import { AppModule } from './app.module';
 import { DomService } from './services/dom.service';
 
 @Component({
@@ -13,6 +16,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.autoDetectDarkMode();
+
   }
 
   autoDetectDarkMode() {
@@ -21,5 +25,13 @@ export class AppComponent {
     } else {
       this._domService.addClassToElementByClassName('theme', 'theme-info');
     }
+  }
+
+  addServiceWorker(): void {
+    platformBrowserDynamic().bootstrapModule(AppModule).then(() => {
+      if ('serviceWorker' in navigator && environment.production) {
+         navigator.serviceWorker.register('ngsw-worker.js');
+      }
+   }).catch(err => console.log(err));
   }
 }
