@@ -93,7 +93,7 @@ export class ConfigToastZoneComponent implements OnInit {
     this.removed(zoneLine.className);
 
     if (zoneColumnListAdded.find(columnType => columnType === zoneColumn.zoneColumnType)) {
-      zoneColumnListAdded = zoneColumnListAdded.filter(columnType => columnType !== zoneColumn.zoneColumnType);
+      // zoneColumnListAdded = zoneColumnListAdded.filter(columnType => columnType !== zoneColumn.zoneColumnType);
       this._domService.removeClassToElementByClassName(zoneColumn.className.split(' ')[0], 'added');
       this._domService.removeClassToElementByClassName(zoneColumn.className.split(' ')[0], 'stripped');
     } else {
@@ -108,7 +108,11 @@ export class ConfigToastZoneComponent implements OnInit {
     if (zoneColumnListAdded.length === 3) {
       thirdZoneColumn = zoneLine.zoneColumns.filter(zoneColumn => zoneColumn.zoneColumnType === zoneColumnListAdded[2])[0]
       this._domService.addClassToElementByClassName(thirdZoneColumn.className.split(' ')[0], 'stripped');
-      positionClassToEmit = PositionClass.bottomFull;
+      if (zoneColumnListAdded.filter(zone => zone === ZoneColumnType.topLeft || zone === ZoneColumnType.topMiddle || zone === ZoneColumnType.topRight).length > 0) {
+        positionClassToEmit = PositionClass.topFull;
+      } else if (zoneColumnListAdded.filter(zone => zone === ZoneColumnType.bottomLeft || zone === ZoneColumnType.bottomMiddle || zone === ZoneColumnType.bottomRight).length > 0) {
+        positionClassToEmit = PositionClass.bottomFull;
+      }
     } else {
       firstZoneColumn = zoneLine.zoneColumns.filter(zoneColumn => zoneColumn.zoneColumnType === zoneColumnListAdded[0])[0];
       if (zoneColumnListAdded.length === 2) {
