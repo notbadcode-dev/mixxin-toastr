@@ -1,18 +1,53 @@
 <!DOCTYPE html><html lang="en"><head>
+  <!-- Essencial -->
   <title>Toastr · by notBadCode</title>
   <base href="/#">
+
+  <!-- Themes and view content-->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#102a43">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#102a43">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#202124">
-  <meta name="description" content="Here you can create your Toastr and download the configuration for your project.">
+
+  <!-- Info and search -->
+  <meta name="author" content="notBadCode">
+  <meta name="keywords" content="Angular2,Angular3,Angular4,Angular5,Angular6,Angular7,Angular8,Angular9,Angular10,Angular11,Angular12,Angular13,Angular14,ng2,toastr,angular,toast,notification,push,ngmodule,ngx-toastr,notbadcode">
+  <meta name="description" content="Do you want to quickly create push notifications with ngx-toastr? Here you can create your Toastr and download the configuration for your project.">
   <link rel="canonical" href="https://toastr.notbadcode.xyz/#">
+
+    <!-- Icons -->
   <link rel="apple-touch-icon" href="assets/icons/icon-512x512.png">
   <link rel="icon" type="image/x-icon" href="assets/icons/icon-48x48.png">
+
+  <!-- Analytics -->
   <link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
   <link rel="manifest" href="manifest.webmanifest">
+
+   <!-- Search Engine -->
+   <meta name="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/misc/example.png">
+
+   <!-- Schema.org for Google -->
+   <meta itemprop="name" content="Toastr · by notBadCode">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-48x48.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-72x72.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-96x96.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-128x128.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-144x144.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-152x152.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-192x192.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-384x384.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/icons/icon-512x512.png">
+   <meta itemprop="image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/misc/example.png">
+
+   <!-- Open Graph general -->
+   <meta name="og:title" content="Toastr · by notBadCode">
+   <meta name="og:image" content="https://raw.githubusercontent.com/notbadcode-dev/toastr/master/src/assets/misc/example.png">
+   <meta name="og:url" content="https://toastr.notbadcode.xyz/">
+   <meta name="og:site_name" content="Toastr · by notBadCode">
+   <meta name="og:type" content="website">
+
 <style>@charset "UTF-8";:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}*,:after,:before{box-sizing:border-box;}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff;}@media print{*,:after,:before{text-shadow:none!important;box-shadow:none!important;}@page {size:a3;}body{min-width:992px!important;}}@font-face{font-family:Material Icons;font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url(MaterialIcons-Regular.69a05f7f816de467f8c5.ttf) format("truetype");font-display:swap;}:root{--notify-background:hsla(0,0%,100%,0.6);--notify-font-family:"Material Icons";--notify-close-icon:"";--percent-bg:.9;--percent-bg-hover:.6;--percent-shadow:.3;--notify-info:#8ab4f8;--notify-info-dark:#0d47a1;--notify-info-icon:var(--notify-info-dark);--notify-info-bg:rgba(138,180,248,var(--percent-bg));--notify-info-bg-hover:rgba(13,71,161,var(--percent-bg-hover));--notify-info-shadow:rgba(13,71,161,var(--percent-shadow));--notify-info-icon:"";--notify-success:#00c851;--notify-success-dark:#007e33;--notify-success-icon:var(--notify-success-dark);--notify-success-bg:rgba(129,201,149,var(--percent-bg));--notify-success-bg-hover:rgba(0,126,51,var(--percent-bg-hover));--notify-success-shadow:rgba(0,126,51,var(--percent-shadow));--notify-success-icon:"";--notify-warning:#fdd663;--notify-warning-dark:#f80;--notify-warning-icon:var(--notify-warning-dark);--notify-warning-bg:rgba(253,214,99,var(--percent-bg));--notify-warning-bg-hover:rgba(255,136,0,var(--percent-bg-hover));--notify-warning-shadow:rgba(255,136,0,var(--percent-shadow));--notify-warning-icon:"";--notify-error:#f28b82;--notify-error-dark:#c00;--notify-error-icon:var(--notify-error-dark);--notify-error-bg:rgba(242,139,130,var(--percent-bg));--notify-error-bg-hover:rgba(204,0,0,var(--percent-bg-hover));--notify-error-shadow:rgba(204,0,0,var(--percent-shadow));--notify-error-icon:"";--theme-dark-color:#aaadb2;--theme-dark-icon:#202124;--theme-dark-color-bg-hover:#303134;--theme-dark-background-color:#202124;--theme-dark-border-color:#5f6368;--radio-checked-icon:"";--radio-unchecked-icon:"";--checkbox-checked-icon:"";--checkbox-unchecked-icon:"";--minus-circle-filled-icon:"";--plus-cicle-filled-icon:"";--full-circle-icon:"";--full-circle-mini-icon:"";--minimize-icon:"";--main-color:var(--notify-info-dark);--main-icon-color:var(--notify-info-dark);--main-color-bg:var(--notify-info-bg);--main-color-hover:var(--notify-info-bg-hover);--main-background-color:#fff;--disabled-color:rgba(0,0,0,0.25);}body:not(.theme-dark){background-color:#e9ecef;}</style><link rel="stylesheet" href="styles.2f8db242a5d50d27689c.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.2f8db242a5d50d27689c.css"></noscript></head>
 <body class="theme">
   <script>
@@ -21,6 +56,7 @@
     gtag('js', new Date());
 
     gtag('config', 'G-CG3DX5RMF3');
+    ga('send', 'pageview');
   </script>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CG3DX5RMF3"></script>
   <app-root></app-root>
