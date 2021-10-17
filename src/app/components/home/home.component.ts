@@ -1,7 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { TIMEOUT_LIMIT } from 'src/app/constants/timeout.constant';
-import { MainButtonType } from 'src/app/enums/button.enum';
 import { ProgressAnimationType, ToastType } from 'src/app/enums/config-notify.enum';
 import { PositionClass } from 'src/app/enums/zone.enum';
 import { ConfigToast } from 'src/app/models/config-notify.model';
@@ -35,17 +35,20 @@ export class HomeComponent implements OnInit {
   toastTypes = ToastType;
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: any,
     private _notifyService: NotifyService,
-    public _domService: DomService,
-    private _fb: FormBuilder) { }
+    public _domService: DomService) { }
 
   ngOnInit(): void {
     this.resetConfig();
-    this.autoDetectDarkMode();
 
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
+    if (isPlatformBrowser(this.platformId)) {
+      this.autoDetectDarkMode();
+
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    }
   }
 
   resetConfig(): void {
@@ -183,7 +186,7 @@ export class HomeComponent implements OnInit {
     return;
   }
 
-  autoDetectDarkMode() {
+  autoDetectDarkMode(): void {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       this._domService.addClassToElementByClassName('selected', 'dark');
       this._domService.addClassToElementByClassName('selector-dark', 'active');

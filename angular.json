@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mixxin-toastr",
+            "outputPath": "dist/mixxin-toastr/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -115,10 +115,10 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/styles/_fonts.scss",
               "src/assets/styles/_variables.scss",
-              "node_modules/ngx-toastr/toastr.css",
-              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/assets/styles/notify.scss",
               "src/assets/styles/_custom_checkbox.scss",
               "src/styles.scss"
@@ -133,6 +133,66 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {}
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/mixxin-toastr/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "mixxin-toastr:build:development",
+              "serverTarget": "mixxin-toastr:server:development"
+            },
+            "production": {
+              "browserTarget": "mixxin-toastr:build:production",
+              "serverTarget": "mixxin-toastr:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mixxin-toastr:build:production",
+              "serverTarget": "mixxin-toastr:server:production"
+            },
+            "development": {
+              "browserTarget": "mixxin-toastr:build:development",
+              "serverTarget": "mixxin-toastr:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

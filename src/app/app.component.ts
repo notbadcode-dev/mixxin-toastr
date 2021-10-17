@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { DomService } from './services/dom.service';
 
@@ -11,28 +12,30 @@ export class AppComponent {
   title = 'mixxin-toastr';
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: any,
     private _domService: DomService,
-    private swUpdate: SwUpdate) {}
+    private swUpdate: SwUpdate
+    ) {}
 
   ngOnInit(): void {
     this.autoDetectDarkMode();
+    this.newVersionInformed();
   }
 
   autoDetectDarkMode() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      this._domService.addClassToElementByClassName('theme', 'theme-dark');
-    } else {
-      this._domService.addClassToElementByClassName('theme', 'theme-info');
+    if (isPlatformBrowser(this.platformId)) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        this._domService.addClassToElementByClassName('theme', 'theme-dark');
+      } else {
+        this._domService.addClassToElementByClassName('theme', 'theme-info');
+      }
     }
   }
 
   newVersionInformed(): void {
     if (this.swUpdate.isEnabled) {
-
       this.swUpdate.available.subscribe(() => {
-
           if(confirm("New version available. Load New Version?")) {
-
               window.location.reload();
           }
       });

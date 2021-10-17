@@ -31,7 +31,7 @@ import { environment } from '../environments/environment';
        ConfigToastComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
