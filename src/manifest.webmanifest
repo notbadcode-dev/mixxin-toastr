@@ -1,7 +1,7 @@
 {
   "name": "Toastr \u00b7  by notBadCode",
   "short_name": "Toastr \u00b7  by notBadCode",
-  "description": "Here you can create your Toastr and download the configuration for your project",
+  "description": "Do you want to quickly create push notifications with ngx-toastr? Here you can create your Toastr and download the configuration for your project.",
   "theme_color": "#0d47a1",
   "background_color": "#e9ecef",
   "display": "standalone",
