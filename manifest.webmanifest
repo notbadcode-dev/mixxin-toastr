@@ -1,8 +1,9 @@
 {
-  "name": "mixxin-toastr",
-  "short_name": "Toastr",
-  "theme_color": "#102a43",
-  "background_color": "#fafafa",
+  "name": "notBadCode \u00b7 Toastr",
+  "short_name": "notBadCode \u00b7 Toastr",
+  "description": "Here you can create your Toastr and download the configuration for your project",
+  "theme_color": "#0d47a1",
+  "background_color": "#e9ecef",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
